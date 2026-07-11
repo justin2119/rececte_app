@@ -23,6 +23,6 @@ Ce projet vise à fournir une plateforme robuste et fiable pour les passionnés 
 ![Formulaire de Certification](https://via.placeholder.com/300x600?text=Certification)
 
 ## Installation
-1. Clonez le dépôt : `git clone https://github.com/justin2119/recipe_certification_project.git`
+1. Clonez le dépôt : `https://github.com/justin2119/rececte_app.git`
 2. Installez les dépendances : `flutter pub get`
 3. Lancez l'application : `flutter run`
