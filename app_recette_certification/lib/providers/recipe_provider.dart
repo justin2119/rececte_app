@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import '../data/data_recipes.dart';
 import '../models/recipe.dart';
-
 final categorieProvider = StateProvider<String?>((ref) => null);
 
 class RecipeNotifier extends Notifier<List<Recipe>> {
