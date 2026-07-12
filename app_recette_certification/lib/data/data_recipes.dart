@@ -18,6 +18,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Nettoyer les feuilles de gboma et les hacher. 2. Cuire la viande avec les oignons et le gingembre. 3. Ajouter les tomates et l\'huile de palme. 4. Incorporer les feuilles et laisser mijoter avec les crabes et crevettes.',
     category: 'Dîner',
     imageUrl: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=500',
+    rating: 3.4,
   ),
   Recipe(
     id: '2',
@@ -35,6 +36,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Faire bouillir de l\'eau with un peu de potasse. 2. Ajouter les feuilles d\'adémè hachées. 3. Ajouter le poisson fumé, la viande cuite et les épices. 4. Laisser cuire jusqu\'à obtenir une consistance gluante.',
     category: 'Dîner',
     imageUrl: 'https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=500',
+    rating: 4.4,
   ),
   Recipe(
     id: '3',
@@ -49,6 +51,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Cuire les haricots dans de l\'eau with un peu de potasse jusqu\'à ce qu\'ils soient tendres. 2. Ajouter le riz lavé. 3. Cuire à feu doux jusqu\'à ce que le riz soit tendre et les grains bien détachés. Servir with du piment noir (Wagashi).',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1512058560566-d8b437a17305?auto=format&fit=crop&w=500',
+    rating: 3.5,
   ),
   Recipe(
     id: '4',
@@ -65,6 +68,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Faire revenir oignon, ail et gingembre dans l\'huile de palme. 2. Ajouter la tomate et le bouillon. 3. Verser la farine de maïs en pluie tout en remuant vigoureusement pour éviter les grumeaux. 4. Cuire à feu doux en remuant jusqu\'à ce que la pâte soit ferme.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=500',
+    rating: 4.3,
   ),
   Recipe(
     id: '5',
@@ -77,6 +81,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Éplucher et couper les ignames en morceaux. 2. Faire bouillir dans de l\'eau salée jusqu\'à tendreté. 3. Piler les morceaux chauds dans un mortier jusqu\'à obtenir une pâte élastique et lisse.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=500',
+    rating: 4.2,
   ),
   Recipe(
     id: '6',
@@ -91,6 +96,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Mélanger les farines, le sucre and la levure with de l\'eau pour former une pâte liquide. 2. Laisser fermenter quelques heures. 3. Verser dans de petits moules and cuire à la vapeur pendant 15-20 minutes.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500',
+    rating: 4.8,
   ),
   Recipe(
     id: '7',
@@ -104,6 +110,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Cuire la pâte de maïs with de l\'eau pour faire une bouillie épaisse. 2. Laisser refroidir. 3. Mélanger with du lait, du sucre and servir très frais with des glaçons.',
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=500',
+    rating: 3.8,
   ),
   Recipe(
     id: '8',
@@ -116,6 +123,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Mélanger la farine fermentée with de l\'eau. 2. Cuire une partie pour faire une bouillie, puis mélanger with le reste de la farine crue. 3. Former des boules, les envelopper dans des feuilles de maïs and cuire à la vapeur.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=500',
+    rating: 3.2,
   ),
   Recipe(
     id: '9',
@@ -128,6 +136,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Couper le fromage en tranches or cubes. 2. Faire frire dans l\'huile chaude jusqu\'à ce qu\'il soit doré. 3. Servir souvent en accompagnement du riz ou with une sauce pimentée.',
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1485921325833-c519f76c4927?auto=format&fit=crop&w=500',
+    rating: 3.6,
   ),
   Recipe(
     id: '10',
@@ -144,6 +153,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Hacher finement les gombos. 2. Faire bouillir la viande and le poisson. 3. Ajouter les gombos and l\'huile de palme. 4. Laisser mijoter jusqu\'à ce que les gombos soient cuits and la sauce onctueuse.',
     category: 'Dîner',
     imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500',
+    rating: 5.0,
   ),
   Recipe(
     id: '11',
@@ -158,6 +168,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Préparer une sauce tomate with oignons and huile. 2. Ajouter un peu d\'eau ou de bouillon. 3. Verser le gari en mélangeant pour obtenir une pâte ferme and granuleuse. Servir with la viande.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500',
+    rating: 3.9,
   ),
   Recipe(
     id: '12',
@@ -171,6 +182,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Cuire les haricots. 2. Ajouter de l\'huile de palme. 3. Incorporer la farine de maïs and mélanger jusqu\'à obtenir une consistance épaisse.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=500',
+    rating: 4.6,
   ),
   Recipe(
     id: '13',
@@ -184,6 +196,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Mélanger la pâte d\'arachide with les épices. 2. Extraire l\'huile. 3. Former des petits cercles ou bâtonnets and faire frire dans l\'huile d\'arachide jusqu\'à ce qu\'ils soient croquants.',
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=500',
+    rating: 3.4,
   ),
   Recipe(
     id: '14',
@@ -198,6 +211,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Cuire la semoule de manioc à la vapeur. 2. Servir with du poisson grillé and une garniture d\'oignons and tomates frais hachés.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500',
+    rating: 4.5,
   ),
   Recipe(
     id: '15',
@@ -212,6 +226,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Mélanger farine, sucre, levure and eau pour obtenir une pâte consistante. 2. Laisser lever. 3. Former des boules and faire frire jusqu\'à coloration dorée.',
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500',
+    rating: 4.8,
   ),
   Recipe(
     id: '16',
@@ -224,6 +239,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Éplucher l\'igname and la couper en frites ou rondelles. 2. Faire frire dans l\'huile chaude jusqu\'à ce qu\'elles soient croustillantes. Servir with une sauce pimentée.',
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1630384066252-4211116279f0?auto=format&fit=crop&w=500',
+    rating: 4.5,
   ),
   Recipe(
     id: '17',
@@ -238,6 +254,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Écrasez ou hachez finement tous les légumes. 2. Faire revenir brièvement dans l\'huile pour exalter les saveurs. Utiliser comme sauce d\'accompagnement très relevée.',
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1590779033100-9f60502a513d?auto=format&fit=crop&w=500',
+    rating: 3.5,
   ),
   Recipe(
     id: '18',
@@ -251,6 +268,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Mélanger le sodabi with du jus de citron. 2. Ajouter le miel and laisser infuser with des racines traditionnelles pour parfumer.',
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=500',
+    rating: 4.7,
   ),
   Recipe(
     id: '19',
@@ -263,6 +281,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Faire bouillir de l\'eau. 2. Ajouter progressivement les farines en mélangeant vigoureusement with une spatule en bois. 3. Cuire jusqu\'à obtenir une pâte lisse and ferme.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1565553642973-6afe791aee33?auto=format&fit=crop&w=500',
+    rating: 3.4,
   ),
   Recipe(
     id: '20',
@@ -277,6 +296,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Préparer une base de sauce tomate. 2. Ajouter la pâte d\'arachide diluée dans un peu d\'eau. 3. Ajouter la viande and laisser mijoter jusqu\'à ce que l\'huile remonte à la surface.',
     category: 'Dîner',
     imageUrl: 'https://images.unsplash.com/photo-1547928576-a4a33237ecd3?auto=format&fit=crop&w=500',
+    rating: 3.4,
   ),
   Recipe(
     id: '21',
@@ -289,6 +309,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Mélanger la pâte de manioc and la farine de maïs. 2. Cuire dans de l\'eau bouillante en remuant jusqu\'à consistance désirée. Servir with une sauce.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=500',
+    rating: 4.5,
   ),
   Recipe(
     id: '22',
@@ -302,6 +323,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Cuire les haricots jusqu\'à ce qu\'ils soient très fondants. 2. Préparer une sauce noire with beaucoup d\'oignons frits dans l\'huile de palme and du piment. 3. Servir les haricots nappés de sauce.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=500',
+    rating: 3.1,
   ),
   Recipe(
     id: '23',
@@ -315,6 +337,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Couper les plantains en cubes. 2. Les faire revenir dans l\'huile de palme with oignons and poisson. 3. Laisser mijoter doucement.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=500',
+    rating: 4.5,
   ),
   Recipe(
     id: '24',
@@ -328,6 +351,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Cuire la farine d\'igname à la vapeur pour obtenir des petits grains. 2. Assaisonner with des épices and servir with une huile parfumée and des oignons.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500',
+    rating: 3.5,
   ),
   Recipe(
     id: '25',
@@ -342,6 +366,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Écrasez les graines de courge. 2. Faire une sauce with viande and tomates. 3. Ajouter la pâte de courge and les épinards. Laisser cuire jusqu\'à ce que la sauce épaississe.',
     category: 'Dîner',
     imageUrl: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=500',
+    rating: 4.2,
   ),
   Recipe(
     id: '26',
@@ -355,6 +380,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Cuire les pois bambara jusqu\'à tendreté. 2. Servir with un peu de sel and d\'huile, or intégrer dans une sauce.',
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1515543904379-3d757afe72e2?auto=format&fit=crop&w=500',
+    rating: 3.1,
   ),
   Recipe(
     id: '27',
@@ -367,6 +393,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Cuire les haricots and les réduire en purée. 2. Faire revenir des oignons dans l\'huile de palme. 3. Mélanger la purée de haricots with l\'huile parfumée.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=500',
+    rating: 3.6,
   ),
   Recipe(
     id: '28',
@@ -381,6 +408,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Faire une omelette aux légumes (tomates, oignons, poivrons). 2. Humidifier légèrement le gari. 3. Mélanger le gari à l\'omelette dans la poêle.',
     category: 'Petit-déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=500',
+    rating: 4.2,
   ),
   Recipe(
     id: '29',
@@ -394,6 +422,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Faire une bouillie légère with la farine de maïs. 2. Ajouter du sucre and du lait. 3. Servir chaud comme petit-déjeuner.',
     category: 'Petit-déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500',
+    rating: 3.5,
   ),
   Recipe(
     id: '30',
@@ -408,6 +437,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Sauter les crevettes with l\'ail and les oignons. 2. Relever with du piment. Servir chaud.',
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1559742811-822873691df8?auto=format&fit=crop&w=500',
+    rating: 4.3,
   ),
   Recipe(
     id: '31',
@@ -421,6 +451,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Frire les petits poissons. 2. Servir with une sauce tomate fraîche and pimentée.',
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=500',
+    rating: 3.7,
   ),
   Recipe(
     id: '32',
@@ -434,6 +465,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Mettre les épices dans une bouteille de sodabi. 2. Laisser macérer plusieurs jours avant de consommer.',
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=500',
+    rating: 3.3,
   ),
   Recipe(
     id: '33',
@@ -445,6 +477,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Cuire la pâte de maïs fermentée dans l\'eau pour obtenir une pâte lisse and un peu aigre. 2. Envelopper dans des feuilles and laisser refroidir.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=500',
+    rating: 4.2,
   ),
   Recipe(
     id: '34',
@@ -459,6 +492,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Mélanger les ingrédients pour faire une pâte. 2. Former de toutes petites boules. 3. Faire frire jusqu\'à ce qu\'elles soient très croquantes.',
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=500',
+    rating: 3.5,
   ),
   Recipe(
     id: '35',
@@ -470,6 +504,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Bouillir de l\'eau. 2. Verser la farine d\'igname and remuer vigoureusement jusqu\'à obtenir une pâte noire and ferme.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1565553642973-6afe791aee33?auto=format&fit=crop&w=500',
+    rating: 4.3,
   ),
   Recipe(
     id: '36',
@@ -483,6 +518,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Faire une base de bouillon. 2. Ajouter la pâte d\'arachide and le poisson fumé. 3. Laisser épaissir la sauce.',
     category: 'Dîner',
     imageUrl: 'https://images.unsplash.com/photo-1547928576-a4a33237ecd3?auto=format&fit=crop&w=500',
+    rating: 4.8,
   ),
   Recipe(
     id: '37',
@@ -497,6 +533,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Cuire les pois chiches. 2. Assaisonner with ail and cumin. 3. Servir sur des morceaux de pain rassis.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1515543904379-3d757afe72e2?auto=format&fit=crop&w=500',
+    rating: 3.7,
   ),
   Recipe(
     id: '38',
@@ -509,6 +546,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Cuire le maïs concassé dans l\'eau salée jusqu\'à ce qu\'il soit tendre. 2. Servir en accompagnement.',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=500',
+    rating: 3.1,
   ),
   Recipe(
     id: '39',
@@ -521,6 +559,7 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Mélanger la farine grillée with de l\'eau ou du lait and du sucre. 2. Consommer comme une bouillie rapide.',
     category: 'Petit-déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500',
+    rating: 4.4,
   ),
   Recipe(
     id: '40',
@@ -534,5 +573,6 @@ const List<Recipe> dataRecipes = [
     instructions: '1. Faire bouillir les fleurs d\'hibiscus dans l\'eau. 2. Filtrer. 3. Ajouter le sucre, la menthe and la vanille. Servir très frais.',
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=500',
+    rating: 4.9,
   )
 ];
