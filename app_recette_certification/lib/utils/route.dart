@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 
+import '../models/recipe.dart';
 import '../screens/about_screen.dart';
 import '../screens/add_recipe_screen.dart';
 import '../screens/home_screen.dart';
@@ -11,8 +12,12 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => const HomeScreen(),
     ),
-    GoRoute(path: "/detail",
-        builder: (context, state) => const RecipeDetailScreen(),
+    GoRoute(
+      path: "/detail",
+      builder: (context, state) {
+        final recipe = state.extra as Recipe;
+        return RecipeDetailScreen(recipe: recipe);
+      },
     ),
     GoRoute(
       path: '/add-recipe',

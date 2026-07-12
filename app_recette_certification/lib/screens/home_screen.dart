@@ -179,7 +179,7 @@ class HomeScreen extends ConsumerWidget {
                                   // Trailing : bouton
                                   IconButton(
                                     onPressed: () {
-                                      context.push('/detail');
+                                      context.push('/detail', extra: recette[index]);
                                     },
                                     icon: const Icon(Icons.arrow_forward_ios_rounded, size: 16),
                                   ),
