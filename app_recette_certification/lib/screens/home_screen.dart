@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../main.dart'; // Import to access themeNotifier
+import '../main.dart';
+import '../widgets/filtter_button.dart'; // Import to access themeNotifier
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -50,38 +51,20 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 4,),
-            Wrap(
-              spacing: 10,
-              children:[
-                ElevatedButton(
-                    onPressed: (){},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[300],
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                    child: const Text("Tous")
-                ),
-                ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey[300],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ), child: const Text("petit déjeuner")),
-                ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey[300],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ), child: const Text("midi")),
-                ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey[300],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ), child: const Text("soir")),
-              ]
+            const SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Flex(
+                spacing:5,
+                direction: Axis.horizontal,
+                children:[
+                  FiltterButton(title: 'Tous',),
+                  FiltterButton(title: 'Petit-déjeuner',),
+                  FiltterButton(title: 'Déjeuner',),
+                  FiltterButton(title: 'Dîner',),
+                  FiltterButton(title: 'Collation',),
+
+                ]
+              ),
             ),
             const SizedBox(height: 4,),
             Expanded(
@@ -98,6 +81,22 @@ class HomeScreen extends StatelessWidget {
                       color: Colors.blueGrey,
                       padding: const EdgeInsets.all(10),
                     ),
+                      title: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Ayimolou"),
+                          Text("Catégorie"),
+                          Row(
+                            children: [
+                              Icon(Icons.star),
+                              Icon(Icons.star),
+                              Icon(Icons.star),
+                              Icon(Icons.star_half),
+                              Icon(Icons.star_border),
+                            ],
+                          )
+                        ],
+                      ),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [

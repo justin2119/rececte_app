@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/carte.dart';
 
 class RecipeDetailScreen extends StatelessWidget {
   final String id;
@@ -7,38 +8,10 @@ class RecipeDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Recipe Detail')),
-      body: Column(
+      appBar: AppBar(title: const Text('Details Recette',style: TextStyle(fontSize: 25),)),
+      body: const Column(
         children: [
-          Stack(
-            children:[
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height*0.4,
-                padding: const EdgeInsets.all(10),
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  color: Colors.brown,
-                ),
-              ),
-              Positioned(
-                bottom: 10,
-                left: 10,
-                child:Row(
-                  children: [
-                    const Text("Ayimolou"),
-                    ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.grey[300],
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ), child: const Text("soir")),
-                  ],
-                ),
-
-              )
-            ],
-          )
+          Carte()
         ],
       )
     );

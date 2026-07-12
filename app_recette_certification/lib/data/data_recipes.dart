@@ -1,6 +1,6 @@
 import '../models/recipe.dart';
 
-const List<Recipe> mockRecipes = [
+const List<Recipe> dataRecipes = [
   Recipe(
     id: '1',
     title: 'Gboma Dessi',
