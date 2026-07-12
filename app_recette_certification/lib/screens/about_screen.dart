@@ -34,7 +34,7 @@ class AboutScreen extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             const Text(
-              'Recette App is dedicated to promoting authentic Togolese recipes and cultural heritage. We make traditional cooking accessible to everyone through a clean, modern digital interface, bridging the gap between ancestral culinary traditions and contemporary technology.',
+              'L\'application Recette App se consacre à la promotion des saveurs authentiques du Togo et à la préservation de notre riche patrimoine culturel. Nous rendons la cuisine traditionnelle accessible à tous grâce à une interface moderne et épurée, créant ainsi un pont entre les traditions culinaires ancestrales et les technologies d\'aujourd\'hui.',
               style: TextStyle(fontSize: 16, height: 1.5),
             ),
             const SizedBox(height: 32),
