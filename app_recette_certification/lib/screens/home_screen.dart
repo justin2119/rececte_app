@@ -20,7 +20,6 @@ class HomeScreen extends ConsumerWidget {
         title: const Text("Tous les Recettes", style: TextStyle(fontSize: 30)),
         actions: [
           ValueListenableBuilder<ThemeMode>(
-            value_notifier: themeNotifier,
             builder: (context, mode, child) {
               return IconButton(
                 icon: Icon(mode == ThemeMode.light
@@ -33,7 +32,7 @@ class HomeScreen extends ConsumerWidget {
                 },
                 tooltip: 'Toggle Theme',
               );
-            },
+            }, valueListenable: themeNotifier,
           ),
           IconButton(
             onPressed: () {
