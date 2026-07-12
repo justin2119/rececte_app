@@ -1,33 +1,88 @@
 import 'package:flutter/material.dart';
+import '../models/recipe.dart';
 import '../widgets/carte.dart';
 
 class RecipeDetailScreen extends StatelessWidget {
-  final String id;
-  const RecipeDetailScreen({super.key, required this.id});
+  final Recipe recipe;
+
+  const RecipeDetailScreen({super.key, required this.recipe});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Details Recette',style: TextStyle(fontSize: 25),)),
-      body: Container(
-        padding: const EdgeInsets.all(5),
-        child: const Column(
+      appBar: AppBar(
+        title: Text(
+          recipe.title,
+          style: const TextStyle(fontSize: 25),
+        ),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Carte(),
-            SizedBox(height: 10),
-            Text("Recettes: Ayimolou",style: TextStyle(fontSize:30,fontWeight: FontWeight.bold),),
-            SizedBox(height:15),
-            Text("Description",style: TextStyle(fontSize:30,fontWeight: FontWeight.bold),),
-            SizedBox(height:15),
-            Text("Ingredients",style: TextStyle(fontSize:30,fontWeight: FontWeight.bold),),
-            SizedBox(height:15),
-            Text("Instructions",style: TextStyle(fontSize:30,fontWeight: FontWeight.bold),),
-
-
+            const Carte(),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Chip(
+                  label: Text(recipe.category),
+                  backgroundColor: Colors.brown.shade100,
+                ),
+                _buildRatingStars(recipe.rating),
+              ],
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              "Description",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              recipe.description,
+              style: const TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              "Ingrédients",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            ...recipe.ingredients.map((item) => Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: Text("• $item", style: const TextStyle(fontSize: 16)),
+                )),
+            const SizedBox(height: 20),
+            const Text(
+              "Instructions",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              recipe.instructions,
+              style: const TextStyle(fontSize: 16),
+            ),
           ],
         ),
-      )
+      ),
     );
+  }
+
+  Widget _buildRatingStars(double rating) {
+    List<Widget> stars = [];
+    int fullStars = rating.floor();
+    bool hasHalfStar = (rating - fullStars) >= 0.5;
+
+    for (int i = 0; i < 5; i++) {
+      if (i < fullStars) {
+        stars.add(const Icon(Icons.star, color: Colors.orange));
+      } else if (i == fullStars && hasHalfStar) {
+        stars.add(const Icon(Icons.star_half, color: Colors.orange));
+      } else {
+        stars.add(const Icon(Icons.star_border, color: Colors.orange));
+      }
+    }
+    return Row(children: stars);
   }
 }
