@@ -8,6 +8,13 @@ class RecipeDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Split instructions by the pattern "digit followed by a dot"
+    final instructionsList = recipe.instructions
+        .split(RegExp(r'\d+\.'))
+        .where((s) => s.trim().isNotEmpty)
+        .map((s) => s.trim())
+        .toList();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -58,10 +65,35 @@ class RecipeDetailScreen extends StatelessWidget {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
-            Text(
-              recipe.instructions,
-              style: const TextStyle(fontSize: 16),
-            ),
+            if (instructionsList.isEmpty)
+              Text(
+                recipe.instructions,
+                style: const TextStyle(fontSize: 16),
+              )
+            else
+              ...instructionsList.asMap().entries.map((entry) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "${entry.key + 1}. ",
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Expanded(
+                        child: Text(
+                          entry.value,
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }),
           ],
         ),
       ),
