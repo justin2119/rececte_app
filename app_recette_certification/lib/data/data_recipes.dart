@@ -19,6 +19,7 @@ const List<Recipe> dataRecipes = [
     category: 'Dîner',
     imageUrl: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=500',
     rating: 3.4,
+    description: 'Une sauce onctueuse aux épinards amers, viande et crustacés, pilier de la cuisine togolaise.',
   ),
   Recipe(
     id: '2',
@@ -37,6 +38,7 @@ const List<Recipe> dataRecipes = [
     category: 'Dîner',
     imageUrl: 'https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=500',
     rating: 4.4,
+    description: 'Une sauce gluante délicate aux feuilles d’Adémè, parfumée au poisson fumé et aux fruits de mer.',
   ),
   Recipe(
     id: '3',
@@ -52,6 +54,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1512058560566-d8b437a17305?auto=format&fit=crop&w=500',
     rating: 3.5,
+    description: 'Le classique riz aux haricots togolais, riche en saveurs et traditionnellement servi avec du piment noir.',
   ),
   Recipe(
     id: '4',
@@ -69,6 +72,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=500',
     rating: 4.3,
+    description: 'Une pâte de maïs savoureuse cuite dans une sauce tomate épicée, spécialité du sud du Togo.',
   ),
   Recipe(
     id: '5',
@@ -82,6 +86,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=500',
     rating: 4.2,
+    description: 'Igname pilée jusqu’à l’obtention d’une texture lisse et élastique, parfaite pour accompagner les sauces.',
   ),
   Recipe(
     id: '6',
@@ -97,6 +102,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500',
     rating: 4.8,
+    description: 'Petits pains de riz et maïs légèrement sucrés et fermentés, cuits à la vapeur pour une texture aérienne.',
   ),
   Recipe(
     id: '7',
@@ -111,6 +117,7 @@ const List<Recipe> dataRecipes = [
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=500',
     rating: 3.8,
+    description: 'Une boisson rafraîchissante à base de maïs fermenté et de lait, idéale pour les journées chaudes.',
   ),
   Recipe(
     id: '8',
@@ -124,6 +131,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=500',
     rating: 3.2,
+    description: 'Boules de maïs fermenté cuites à la vapeur, offrant un goût acidulé unique et authentique.',
   ),
   Recipe(
     id: '9',
@@ -137,6 +145,7 @@ const List<Recipe> dataRecipes = [
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1485921325833-c519f76c4927?auto=format&fit=crop&w=500',
     rating: 3.6,
+    description: 'Fromage traditionnel peul frit, doré à l’extérieur et tendre à l’intérieur, un régal croustillant.',
   ),
   Recipe(
     id: '10',
@@ -154,6 +163,7 @@ const List<Recipe> dataRecipes = [
     category: 'Dîner',
     imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500',
     rating: 5.0,
+    description: 'Une sauce gombo généreuse et parfumée, agrémentée de viandes variées et de crustacés.',
   ),
   Recipe(
     id: '11',
@@ -169,6 +179,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500',
     rating: 3.9,
+    description: 'Une préparation rapide et savoureuse de gari cuit dans une sauce tomate avec de la viande.',
   ),
   Recipe(
     id: '12',
@@ -183,6 +194,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=500',
     rating: 4.6,
+    description: 'Un mélange nourrissant de haricots et de farine de maïs lié à l’huile de palme.',
   ),
   Recipe(
     id: '13',
@@ -197,6 +209,7 @@ const List<Recipe> dataRecipes = [
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=500',
     rating: 3.4,
+    description: 'Croquants à l’arachide épicés, une collation incontournable appréciée pour son goût torréfié.',
   ),
   Recipe(
     id: '14',
@@ -212,6 +225,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500',
     rating: 4.5,
+    description: 'Semoule de manioc vapeur servie avec du poisson grillé et une garniture de légumes frais.',
   ),
   Recipe(
     id: '15',
@@ -227,6 +241,7 @@ const List<Recipe> dataRecipes = [
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500',
     rating: 4.8,
+    description: 'Beignets togolais moelleux et sucrés, parfaits pour une pause gourmande à tout moment.',
   ),
   Recipe(
     id: '16',
@@ -240,6 +255,7 @@ const List<Recipe> dataRecipes = [
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1630384066252-4211116279f0?auto=format&fit=crop&w=500',
     rating: 4.5,
+    description: 'Tranches d’igname frites croustillantes, l’accompagnement idéal pour les sauces pimentées.',
   ),
   Recipe(
     id: '17',
@@ -255,6 +271,7 @@ const List<Recipe> dataRecipes = [
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1590779033100-9f60502a513d?auto=format&fit=crop&w=500',
     rating: 3.5,
+    description: 'Une purée de piments et légumes frais, condiment essentiel pour relever tous vos plats.',
   ),
   Recipe(
     id: '18',
@@ -269,6 +286,7 @@ const List<Recipe> dataRecipes = [
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=500',
     rating: 4.7,
+    description: 'Le célèbre spiritueux de palmier revisité en cocktail avec du citron et des racines infusées.',
   ),
   Recipe(
     id: '19',
@@ -282,6 +300,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1565553642973-6afe791aee33?auto=format&fit=crop&w=500',
     rating: 3.4,
+    description: 'Pâte de maïs traditionnelle et consistante, la base de nombreux repas familiaux au Togo.',
   ),
   Recipe(
     id: '20',
@@ -297,6 +316,7 @@ const List<Recipe> dataRecipes = [
     category: 'Dîner',
     imageUrl: 'https://images.unsplash.com/photo-1547928576-a4a33237ecd3?auto=format&fit=crop&w=500',
     rating: 3.4,
+    description: 'Une sauce onctueuse à la pâte d’arachide, riche en arômes et délicieusement réconfortante.',
   ),
   Recipe(
     id: '21',
@@ -310,6 +330,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=500',
     rating: 4.5,
+    description: 'Pâte de manioc et maïs cuite à la vapeur, offrant une texture souple et un goût doux.',
   ),
   Recipe(
     id: '22',
@@ -324,6 +345,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=500',
     rating: 3.1,
+    description: 'Haricots fondants nappés d’une sauce noire aux oignons frits et piments, un délice épicé.',
   ),
   Recipe(
     id: '23',
@@ -338,6 +360,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=500',
     rating: 4.5,
+    description: 'Bananes plantains mûres mijotées avec du poisson séché dans une sauce à l’huile de palme.',
   ),
   Recipe(
     id: '24',
@@ -352,6 +375,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500',
     rating: 3.5,
+    description: 'Couscous de farine d’igname noire, léger et parfumé aux épices traditionnelles.',
   ),
   Recipe(
     id: '25',
@@ -367,6 +391,7 @@ const List<Recipe> dataRecipes = [
     category: 'Dîner',
     imageUrl: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=500',
     rating: 4.2,
+    description: 'Sauce aux graines de courge pilées, riche en protéines et agrémentée de feuilles vertes.',
   ),
   Recipe(
     id: '26',
@@ -381,6 +406,7 @@ const List<Recipe> dataRecipes = [
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1515543904379-3d757afe72e2?auto=format&fit=crop&w=500',
     rating: 3.1,
+    description: 'Pois bambara cuits simplement, une source de nutrition naturelle et authentique.',
   ),
   Recipe(
     id: '27',
@@ -394,6 +420,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=500',
     rating: 3.6,
+    description: 'Purée de haricots blancs parfumée à l’huile de palme et aux oignons caramélisés.',
   ),
   Recipe(
     id: '28',
@@ -409,6 +436,7 @@ const List<Recipe> dataRecipes = [
     category: 'Petit-déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=500',
     rating: 4.2,
+    description: 'Un mélange savoureux de gari et d’omelette aux légumes, parfait pour un réveil énergisant.',
   ),
   Recipe(
     id: '29',
@@ -423,6 +451,7 @@ const List<Recipe> dataRecipes = [
     category: 'Petit-déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500',
     rating: 3.5,
+    description: 'Bouillie de maïs douce et onctueuse, le petit-déjeuner traditionnel par excellence.',
   ),
   Recipe(
     id: '30',
@@ -438,6 +467,7 @@ const List<Recipe> dataRecipes = [
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1559742811-822873691df8?auto=format&fit=crop&w=500',
     rating: 4.3,
+    description: 'Crevettes sautées à l’ail et au piment, une entrée vive et pleine de fraîcheur.',
   ),
   Recipe(
     id: '31',
@@ -452,6 +482,7 @@ const List<Recipe> dataRecipes = [
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=500',
     rating: 3.7,
+    description: 'Petits poissons frits accompagnés d’une sauce tomate fraîche et intensément pimentée.',
   ),
   Recipe(
     id: '32',
@@ -466,6 +497,7 @@ const List<Recipe> dataRecipes = [
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=500',
     rating: 3.3,
+    description: 'Liqueur de palme traditionnelle macérée avec des épices pour des saveurs boisées et complexes.',
   ),
   Recipe(
     id: '33',
@@ -478,6 +510,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=500',
     rating: 4.2,
+    description: 'Pâte de maïs fermentée et cuite, servie froide dans des feuilles pour un goût subtilement acidulé.',
   ),
   Recipe(
     id: '34',
@@ -493,6 +526,7 @@ const List<Recipe> dataRecipes = [
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=500',
     rating: 3.5,
+    description: 'Petits biscuits croquants à la muscade, une douceur addictive à partager.',
   ),
   Recipe(
     id: '35',
@@ -505,6 +539,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1565553642973-6afe791aee33?auto=format&fit=crop&w=500',
     rating: 4.3,
+    description: 'Pâte consistante à base de farine d’igname séchée, emblématique des terroirs togolais.',
   ),
   Recipe(
     id: '36',
@@ -519,6 +554,7 @@ const List<Recipe> dataRecipes = [
     category: 'Dîner',
     imageUrl: 'https://images.unsplash.com/photo-1547928576-a4a33237ecd3?auto=format&fit=crop&w=500',
     rating: 4.8,
+    description: 'Mariage réussi entre l’onctuosité de l’arachide et le parfum fumé du poisson traditionnel.',
   ),
   Recipe(
     id: '37',
@@ -534,6 +570,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1515543904379-3d757afe72e2?auto=format&fit=crop&w=500',
     rating: 3.7,
+    description: 'Soupe de pois chiches à l’ail et au cumin, servie sur du pain pour un repas complet.',
   ),
   Recipe(
     id: '38',
@@ -547,6 +584,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=500',
     rating: 3.1,
+    description: 'Maïs concassé cuit à l’eau, un accompagnement rustique et nourrissant.',
   ),
   Recipe(
     id: '39',
@@ -560,6 +598,7 @@ const List<Recipe> dataRecipes = [
     category: 'Petit-déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500',
     rating: 4.4,
+    description: 'Bouillie rapide à base de farine de maïs grillé, appréciée pour son goût de noisette.',
   ),
   Recipe(
     id: '40',
@@ -574,6 +613,7 @@ const List<Recipe> dataRecipes = [
     category: 'Collation',
     imageUrl: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=500',
     rating: 4.9,
+    description: 'Infusion rafraîchissante de fleurs d’hibiscus, parfumée à la menthe et à la vanille.',
   ),
   Recipe(
     id: '41',
@@ -591,6 +631,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500',
     rating: 4.1,
+    description: 'Une alternative végétarienne savoureuse à base de soja mijoté dans une sauce aromatique.',
   ),
   Recipe(
     id: '42',
@@ -606,6 +647,7 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=500',
     rating: 3.9,
+    description: 'Boulettes de haricots et maïs servies dans une sauce onctueuse à l’huile de palme.',
   ),
   Recipe(
     id: '43',
@@ -621,6 +663,7 @@ const List<Recipe> dataRecipes = [
     category: 'Dîner',
     imageUrl: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=500',
     rating: 4.2,
+    description: 'Un ragoût robuste de viande et de tripes relevé à la moutarde traditionnelle.',
   ),
   Recipe(
     id: '44',
@@ -634,6 +677,7 @@ const List<Recipe> dataRecipes = [
     category: 'Petit-déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500',
     rating: 4.5,
+    description: 'Bouillie nutritive à base de mil germé, riche en histoire et en bienfaits.',
   ),
   Recipe(
     id: '45',
@@ -648,5 +692,6 @@ const List<Recipe> dataRecipes = [
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1512058560566-d8b437a17305?auto=format&fit=crop&w=500',
     rating: 3.8,
+    description: 'Riz et haricots cuits ensemble, servis avec du poisson frit pour un déjeuner équilibré.',
   )
 ];
