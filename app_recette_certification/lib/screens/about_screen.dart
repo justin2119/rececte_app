@@ -27,9 +27,17 @@ class AboutScreen extends StatelessWidget {
                 ],
               ),
             ),
-
-
-
+            const SizedBox(height: 32),
+            const Text(
+              'Description',
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 12),
+            const Text(
+              'Recette App is dedicated to promoting authentic Togolese recipes and cultural heritage. We make traditional cooking accessible to everyone through a clean, modern digital interface, bridging the gap between ancestral culinary traditions and contemporary technology.',
+              style: TextStyle(fontSize: 16, height: 1.5),
+            ),
+            const SizedBox(height: 32),
             Center(
               child: Text(
                 '© 2026 Interaction Company',
