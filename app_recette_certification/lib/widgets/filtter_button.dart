@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class FiltterButton extends StatelessWidget {
+class FilterButton extends StatelessWidget {
   final String title;
   final bool isSelected;
   final VoidCallback onPressed;
 
-  const FiltterButton({
+  const FilterButton({
     super.key,
     required this.title,
     this.isSelected = false,
