@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:recipe_certification_project/utils/route.dart';
-import 'screens/home_screen.dart';
-import 'screens/recipe_detail_screen.dart';
-import 'screens/add_recipe_screen.dart';
-import 'screens/about_screen.dart';
 
 // 1. Use ValueNotifier<ThemeMode> in main.dart to track the theme mode.
 final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.light);
@@ -20,7 +15,6 @@ class RecipeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 3. Ensure the MaterialApp.router in lib/main.dart is wrapped with a ValueListenableBuilder<ThemeMode>
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: themeNotifier,
       builder: (_, ThemeMode currentMode, __) {

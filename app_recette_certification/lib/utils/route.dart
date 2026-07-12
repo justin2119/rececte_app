@@ -18,6 +18,9 @@ final GoRouter router = GoRouter(
         return RecipeDetailScreen(id: id);
       },
     ),
+    GoRoute(path: "/detail",
+        builder: (context, state) => const RecipeDetailScreen(id: '',),
+    ),
     GoRoute(
       path: '/add-recipe',
       builder: (context, state) => const AddRecipeScreen(),

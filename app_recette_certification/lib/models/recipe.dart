@@ -57,30 +57,4 @@ class Recipe {
       imageUrl: json['imageUrl'] as String,
     );
   }
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is Recipe &&
-          runtimeType == other.runtimeType &&
-          id == other.id &&
-          title == other.title &&
-          listEquals(ingredients, other.ingredients) &&
-          instructions == other.instructions &&
-          category == other.category &&
-          imageUrl == other.imageUrl;
-
-  @override
-  int get hashCode =>
-      id.hashCode ^
-      title.hashCode ^
-      ingredients.hashCode ^
-      instructions.hashCode ^
-      category.hashCode ^
-      imageUrl.hashCode;
-
-  @override
-  String toString() {
-    return 'Recipe(id: $id, title: $title, category: $category)';
-  }
 }
