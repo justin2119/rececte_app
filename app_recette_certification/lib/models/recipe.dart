@@ -8,6 +8,7 @@ class Recipe {
   final String instructions;
   final String category;
   final String imageUrl;
+  final double rating;
 
   const Recipe({
     required this.id,
@@ -16,6 +17,7 @@ class Recipe {
     required this.instructions,
     required this.category,
     required this.imageUrl,
+    required this.rating,
   });
 
   Recipe copyWith({
@@ -25,6 +27,7 @@ class Recipe {
     String? instructions,
     String? category,
     String? imageUrl,
+    double? rating,
   }) {
     return Recipe(
       id: id ?? this.id,
@@ -33,6 +36,7 @@ class Recipe {
       instructions: instructions ?? this.instructions,
       category: category ?? this.category,
       imageUrl: imageUrl ?? this.imageUrl,
+      rating: rating ?? this.rating,
     );
   }
 
@@ -44,6 +48,7 @@ class Recipe {
       'instructions': instructions,
       'category': category,
       'imageUrl': imageUrl,
+      'rating': rating,
     };
   }
 
@@ -55,6 +60,7 @@ class Recipe {
       instructions: json['instructions'] as String,
       category: json['category'] as String,
       imageUrl: json['imageUrl'] as String,
+      rating: (json['rating'] as num).toDouble(),
     );
   }
 }
