@@ -50,7 +50,7 @@ const List<Recipe> dataRecipes = [
       'Sel',
       'Eau',
     ],
-    instructions: '1. Cuire les haricots dans de l\'eau with un peu de potasse jusqu\'à ce qu\'ils soient tendres. 2. Ajouter le riz lavé. 3. Cuire à feu doux jusqu\'à ce que le riz soit tendre et les grains bien détachés. Servir with du piment noir (Wagashi).',
+    instructions: '1. Cuire les haricots dans de l\'eau avec un peu de potasse jusqu\'à ce qu\'ils soient tendres. 2. Ajouter le riz lavé. 3. Cuire à feu doux jusqu\'à ce que le riz soit tendre et les grains bien détachés. Servir avec du piment noir (Wagashi).',
     category: 'Déjeuner',
     imageUrl: 'https://images.unsplash.com/photo-1512058560566-d8b437a17305?auto=format&fit=crop&w=500',
     rating: 3.5,

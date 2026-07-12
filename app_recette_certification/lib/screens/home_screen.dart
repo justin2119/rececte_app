@@ -163,15 +163,7 @@ class HomeScreen extends ConsumerWidget {
                                           recette[index].category,
                                           style: const TextStyle(color: Colors.grey, fontSize: 15),
                                         ),
-                                        const Row(
-                                          children: [
-                                            Icon(Icons.star, size: 16, color: Colors.amber),
-                                            Icon(Icons.star, size: 16, color: Colors.amber),
-                                            Icon(Icons.star, size: 16, color: Colors.amber),
-                                            Icon(Icons.star_half, size: 16, color: Colors.amber),
-                                            Icon(Icons.star_border, size: 16, color: Colors.amber),
-                                          ],
-                                        ),
+
                                       ],
                                     ),
                                   ),

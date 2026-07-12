@@ -27,14 +27,14 @@ class RecipeDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Carte(),
+            Carte(title:recipe.title, image: recipe.imageUrl),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Chip(
-                  label: Text(recipe.category),
-                  backgroundColor: Colors.brown.shade100,
+                  label: Text(recipe.category, style: const TextStyle(fontSize: 20,color: Colors.white)),
+                  backgroundColor: Colors.green[900],
                 ),
                 _buildRatingStars(recipe.rating),
               ],
@@ -42,33 +42,33 @@ class RecipeDetailScreen extends StatelessWidget {
             const SizedBox(height: 20),
             const Text(
               "Description",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             Text(
               recipe.description,
-              style: const TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 22),
             ),
             const SizedBox(height: 20),
             const Text(
               "Ingrédients",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             ...recipe.ingredients.map((item) => Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: Text("• $item", style: const TextStyle(fontSize: 16)),
+                  child: Text("• $item", style: const TextStyle(fontSize: 22)),
                 )),
             const SizedBox(height: 20),
             const Text(
               "Instructions",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             if (instructionsList.isEmpty)
               Text(
                 recipe.instructions,
-                style: const TextStyle(fontSize: 16),
+                style: const TextStyle(fontSize: 22),
               )
             else
               ...instructionsList.asMap().entries.map((entry) {
@@ -80,14 +80,14 @@ class RecipeDetailScreen extends StatelessWidget {
                       Text(
                         "${entry.key + 1}. ",
                         style: const TextStyle(
-                          fontSize: 16,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Expanded(
                         child: Text(
                           entry.value,
-                          style: const TextStyle(fontSize: 16),
+                          style: const TextStyle(fontSize: 22),
                         ),
                       ),
                     ],

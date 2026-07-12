@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Carte extends StatelessWidget {
-  const Carte({Key? key}) : super(key: key);
+  final String title;
+  final String image;
+  Carte({required this.title,required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +14,13 @@ class Carte extends StatelessWidget {
           height: MediaQuery.of(context).size.height*0.3,
           padding: const EdgeInsets.all(5),
           margin: const EdgeInsets.all(10),
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+          decoration:  BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
             color: Colors.brown,
+            image: DecorationImage(
+                image:NetworkImage(image),
+                fit: BoxFit.cover
+            )
           ),
         ),
         Positioned(
@@ -23,13 +29,12 @@ class Carte extends StatelessWidget {
           child:Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text("Ayimolou",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
-              ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.grey[300],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ), child: const Text("soir")),
+              Text(title,style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+              ),),
+
             ],
           ),
 
