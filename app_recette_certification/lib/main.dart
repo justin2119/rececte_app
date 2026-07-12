@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipe_certification_project/utils/route.dart';
 
-// 1. Use ValueNotifier<ThemeMode> in main.dart to track the theme mode.
 final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.light);
 
 void main() {
-  runApp(const RecipeApp());
+  runApp(
+    const ProviderScope(
+      child: RecipeApp(),
+    ),
+  );
 }
-
-
 
 class RecipeApp extends StatelessWidget {
   const RecipeApp({super.key});
