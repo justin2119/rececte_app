@@ -3,12 +3,10 @@ import '../models/recipe.dart';
 import '../widgets/carte.dart';
 
 class RecipeDetailScreen extends StatelessWidget {
-  final Recipe recipe;
-
-  const RecipeDetailScreen({super.key, required this.recipe});
-
+  const RecipeDetailScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    final recipe = ModalRoute.of(context)!.settings.arguments as Recipe;
     return Scaffold(
       appBar: AppBar(
         title: Text(

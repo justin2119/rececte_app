@@ -6,7 +6,7 @@ import '../models/recipe.dart';
 final categorieProvider=StateProvider<String?>((ref)=>null);
 final recetteProvider=Provider<List<Recipe>>((ref) {
   final categorie=ref.watch(categorieProvider);
-  if(categorie=="Tous"){
+  if(categorie=="Tous" || categorie==null){
     return dataRecipes;
   }
   return dataRecipes.where((item)=>item.category==categorie).toList();

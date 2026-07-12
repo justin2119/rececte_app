@@ -111,9 +111,8 @@ class HomeScreen extends ConsumerWidget {
                   } else if (constraints.maxWidth > 600) {
                     crossAxisCount = 2;
                   }
-
                   return GridView.builder(
-                    itemCount: 20,
+                    itemCount: recette.length,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: crossAxisCount,
                       crossAxisSpacing: 10,
@@ -121,44 +120,73 @@ class HomeScreen extends ConsumerWidget {
                       childAspectRatio: crossAxisCount == 1 ? 3 : 1,
                     ),
                     itemBuilder: (context, index) => Card(
-                      elevation: 2,
+                      elevation: 1,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: ListTile(
-                        onTap: () {
-                          context.push('/detail');
-                        },
-                        leading: Container(
-                          height: 100,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.blueGrey,
-                          ),
+                      child:Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.green[900],
                         ),
-                        title: const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Ayimolou", style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text("Catégorie", style: TextStyle(color: Colors.grey, fontSize: 12)),
-                            Row(
-                              children: [
-                                Icon(Icons.star, size: 16, color: Colors.amber),
-                                Icon(Icons.star, size: 16, color: Colors.amber),
-                                Icon(Icons.star, size: 16, color: Colors.amber),
-                                Icon(Icons.star_half, size: 16, color: Colors.amber),
-                                Icon(Icons.star_border, size: 16, color: Colors.amber),
-                              ],
-                            )
-                          ],
-                        ),
-                        trailing: IconButton(
-                          onPressed: () {
-                            context.push('/detail');
+                        child: InkWell(
+                          onTap: () {
+                            context.push('/detail', extra: recette[index]);
                           },
-                          icon: const Icon(Icons.arrow_forward_ios_rounded, size: 16),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                            child: IntrinsicHeight(
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: SizedBox(
+                                      width: 100,
+                                      child: Image(
+                                        image: NetworkImage(recette[index].imageUrl),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 12),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          recette[index].title,
+                                          style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 25),
+                                        ),
+                                        Text(
+                                          recette[index].category,
+                                          style: const TextStyle(color: Colors.grey, fontSize: 15),
+                                        ),
+                                        const Row(
+                                          children: [
+                                            Icon(Icons.star, size: 16, color: Colors.amber),
+                                            Icon(Icons.star, size: 16, color: Colors.amber),
+                                            Icon(Icons.star, size: 16, color: Colors.amber),
+                                            Icon(Icons.star_half, size: 16, color: Colors.amber),
+                                            Icon(Icons.star_border, size: 16, color: Colors.amber),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+
+                                  // Trailing : bouton
+                                  IconButton(
+                                    onPressed: () {
+                                      context.push('/detail');
+                                    },
+                                    icon: const Icon(Icons.arrow_forward_ios_rounded, size: 16),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ),

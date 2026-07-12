@@ -27,6 +27,11 @@ class RecipeApp extends StatelessWidget {
           themeMode: currentMode,
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow.shade800),
+            appBarTheme: AppBarThemeData(
+              backgroundColor: Colors.yellow.shade700,
+              foregroundColor: Colors.black,
+              centerTitle: true,
+            ),
             useMaterial3: true,
           ),
           darkTheme: ThemeData(
@@ -34,6 +39,11 @@ class RecipeApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.redAccent,
               brightness: Brightness.dark,
+            ),
+            appBarTheme: AppBarTheme(
+              backgroundColor: Colors.yellow.shade700,
+              foregroundColor: Colors.white,
+              centerTitle: true,
             ),
             useMaterial3: true,
           ),
