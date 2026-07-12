@@ -190,7 +190,9 @@ class HomeScreen extends ConsumerWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          context.push('/add-recipe');
+        },
         child: const Icon(Icons.add),
       ),
     );
