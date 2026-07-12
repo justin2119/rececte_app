@@ -20,7 +20,7 @@ class HomeScreen extends ConsumerWidget {
         title: const Text("Tous les Recettes", style: TextStyle(fontSize: 30)),
         actions: [
           ValueListenableBuilder<ThemeMode>(
-            valueListenable: themeNotifier,
+            value_notifier: themeNotifier,
             builder: (context, mode, child) {
               return IconButton(
                 icon: Icon(mode == ThemeMode.light
@@ -51,6 +51,9 @@ class HomeScreen extends ConsumerWidget {
               children: [
                 Expanded(
                   child: TextField(
+                    onChanged: (value) {
+                      ref.read(searchProvider.notifier).state = value;
+                    },
                     decoration: InputDecoration(
                       hintText: "Rechercher une recette....",
                       suffixIcon: const Icon(Icons.search),

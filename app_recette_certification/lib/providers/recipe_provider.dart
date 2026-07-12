@@ -1,8 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_riverpod/legacy.dart';
 import '../data/data_recipes.dart';
 import '../models/recipe.dart';
+
 final categorieProvider = StateProvider<String?>((ref) => null);
+final searchProvider = StateProvider<String>((ref) => "");
 
 class RecipeNotifier extends Notifier<List<Recipe>> {
   @override
@@ -20,8 +21,11 @@ final allRecipesProvider = NotifierProvider<RecipeNotifier, List<Recipe>>(Recipe
 final recetteProvider = Provider<List<Recipe>>((ref) {
   final allRecipes = ref.watch(allRecipesProvider);
   final categorie = ref.watch(categorieProvider);
-  if (categorie == "Tous" || categorie == null) {
-    return allRecipes;
-  }
-  return allRecipes.where((item) => item.category == categorie).toList();
+  final search = ref.watch(searchProvider).toLowerCase();
+
+  return allRecipes.where((item) {
+    final matchesCategory = (categorie == "Tous" || categorie == null || item.category == categorie);
+    final matchesSearch = (search.isEmpty || item.title.toLowerCase().contains(search));
+    return matchesCategory && matchesSearch;
+  }).toList();
 });
