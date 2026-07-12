@@ -9,7 +9,7 @@ class Carte extends StatelessWidget {
       children:[
         Container(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height*0.4,
+          height: MediaQuery.of(context).size.height*0.3,
           padding: const EdgeInsets.all(10),
           margin: const EdgeInsets.all(10),
           decoration: const BoxDecoration(
