@@ -36,7 +36,9 @@ class HomeScreen extends ConsumerWidget {
             },
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.push('/about');
+            },
             icon: const Icon(Icons.error_outline_outlined),
           )
         ],
