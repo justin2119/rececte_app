@@ -10,7 +10,7 @@ class Carte extends StatelessWidget {
         Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height*0.3,
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(5),
           margin: const EdgeInsets.all(10),
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -21,6 +21,7 @@ class Carte extends StatelessWidget {
           bottom: 13,
           left: 15,
           child:Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text("Ayimolou",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
               ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
