@@ -18,11 +18,11 @@ class Carte extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 10,
-          left: 10,
+          bottom: 13,
+          left: 15,
           child:Row(
             children: [
-              const Text("Ayimolou"),
+              const Text("Ayimolou",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
               ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.grey[300],
                 shape: RoundedRectangleBorder(
