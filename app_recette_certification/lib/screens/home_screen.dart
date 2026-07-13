@@ -167,7 +167,11 @@ class HomeScreen extends ConsumerWidget {
                                           recette[index].category,
                                           style: const TextStyle(color: Colors.grey, fontSize: 15),
                                         ),
-
+                                        const SizedBox(height: 4),
+                                        Text(
+                                          '⏱ ' + recette[index].prepDuration,
+                                          style: const TextStyle(color: Colors.white70, fontSize: 14),
+                                        ),
                                       ],
                                     ),
                                   ),

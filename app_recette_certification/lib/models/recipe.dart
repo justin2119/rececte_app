@@ -8,6 +8,7 @@ class Recipe {
   final String instructions;
   final String category;
   final String imageUrl;
+  final String prepDuration;
   final double rating;
   final String description;
 
@@ -18,6 +19,7 @@ class Recipe {
     required this.instructions,
     required this.category,
     required this.imageUrl,
+    required this.prepDuration,
     required this.rating,
     required this.description,
   });
@@ -29,6 +31,7 @@ class Recipe {
     String? instructions,
     String? category,
     String? imageUrl,
+    String? prepDuration,
     double? rating,
     String? description,
   }) {
@@ -39,6 +42,7 @@ class Recipe {
       instructions: instructions ?? this.instructions,
       category: category ?? this.category,
       imageUrl: imageUrl ?? this.imageUrl,
+      prepDuration: prepDuration ?? this.prepDuration,
       rating: rating ?? this.rating,
       description: description ?? this.description,
     );
@@ -52,6 +56,7 @@ class Recipe {
       'instructions': instructions,
       'category': category,
       'imageUrl': imageUrl,
+      'prepDuration': prepDuration,
       'rating': rating,
       'description': description,
     };
@@ -65,6 +70,7 @@ class Recipe {
       instructions: json['instructions'] as String,
       category: json['category'] as String,
       imageUrl: json['imageUrl'] as String,
+      prepDuration: json['prepDuration'] as String,
       rating: (json['rating'] as num).toDouble(),
       description: json['description'] as String,
     );
