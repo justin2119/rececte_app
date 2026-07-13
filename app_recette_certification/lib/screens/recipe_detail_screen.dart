@@ -8,7 +8,6 @@ class RecipeDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Split instructions by the pattern "digit followed by a dot"
     final instructionsList = recipe.instructions
         .split(RegExp(r'\d+\.'))
         .where((s) => s.trim().isNotEmpty)
@@ -19,7 +18,7 @@ class RecipeDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           recipe.title,
-          style: const TextStyle(fontSize: 25),
+          style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
       ),
       body: SingleChildScrollView(
@@ -52,7 +51,7 @@ class RecipeDetailScreen extends StatelessWidget {
             const SizedBox(height: 20),
             const Text(
               "Description",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,),
             ),
             const SizedBox(height: 8),
             Text(
@@ -62,17 +61,25 @@ class RecipeDetailScreen extends StatelessWidget {
             const SizedBox(height: 20),
             const Text(
               "Ingrédients",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(height: 8),
             ...recipe.ingredients.map((item) => Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: Text("• \$item", style: const TextStyle(fontSize: 22)),
+                  child:Row(
+                    spacing: 5,
+                    children: [
+                      const Icon(Icons.brightness_1_rounded),
+                      Text(item, style: const TextStyle(fontSize: 22)),
+                    ],
+                  )
                 )),
             const SizedBox(height: 20),
             const Text(
               "Instructions",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 30, fontWeight: FontWeight.bold,),
             ),
             const SizedBox(height: 8),
             if (instructionsList.isEmpty)
@@ -88,9 +95,9 @@ class RecipeDetailScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "\${entry.key + 1}. ",
+                        "${entry.key + 1}.",
                         style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 25,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

@@ -102,6 +102,12 @@ class HomeScreen extends ConsumerWidget {
                       ref.read(categorieProvider.notifier).state = "Collation";
                     },
                   ),
+                  FilterButton(
+                    title: 'Sauces Togolaises',
+                    onPressed: () {
+                      ref.read(categorieProvider.notifier).state = "Sauces Togolaises";
+                    },
+                  ),
                 ],
               ),
             ),
@@ -155,24 +161,26 @@ class HomeScreen extends ConsumerWidget {
                                   ),
                                   const SizedBox(width: 12),
                                   Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          recette[index].title,
-                                          style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 25),
-                                        ),
-                                        Text(
-                                          recette[index].category,
-                                          style: const TextStyle(color: Colors.grey, fontSize: 15),
-                                        ),
-                                        const SizedBox(height: 4),
-                                        Text(
-                                          '⏱ ' + recette[index].prepDuration,
-                                          style: const TextStyle(color: Colors.white70, fontSize: 14),
-                                        ),
-                                      ],
+                                    child: SingleChildScrollView(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            recette[index].title,
+                                            style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 25),
+                                          ),
+                                          Text(
+                                            recette[index].category,
+                                            style: const TextStyle(color: Colors.grey, fontSize: 15),
+                                          ),
+                                          const SizedBox(height: 4),
+                                          Text(
+                                            '⏱ ' + recette[index].prepDuration,
+                                            style: const TextStyle(color: Colors.white70, fontSize: 14),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
 
