@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import '../main.dart';
 import '../providers/recipe_provider.dart';
 import '../widgets/filtter_button.dart';
@@ -153,9 +154,11 @@ class HomeScreen extends ConsumerWidget {
                                     borderRadius: BorderRadius.circular(10),
                                     child: SizedBox(
                                       width: MediaQuery.of(context).size.width * 0.30,
-                                      child: Image(
-                                        image: NetworkImage(recette[index].imageUrl),
+                                      child: CachedNetworkImage(
+                                        imageUrl: recette[index].imageUrl,
                                         fit: BoxFit.cover,
+                                        placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+                                        errorWidget: (context, url, error) => const Icon(Icons.error),
                                       ),
                                     ),
                                   ),
