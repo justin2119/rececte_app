@@ -12,12 +12,9 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final recette = ref.watch(recetteProvider);
-    if (kDebugMode) {
-      print(recette);
-    }
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Tous les Recettes", style: TextStyle(fontSize: 30)),
+        title: Text("Tous les Recettes (${recette.length})", style: const TextStyle(fontSize: 30)),
         actions: [
           ValueListenableBuilder<ThemeMode>(
             builder: (context, mode, child) {
