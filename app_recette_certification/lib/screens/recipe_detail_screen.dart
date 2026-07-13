@@ -36,7 +36,17 @@ class RecipeDetailScreen extends StatelessWidget {
                   label: Text(recipe.category, style: const TextStyle(fontSize: 20,color: Colors.white)),
                   backgroundColor: Colors.green[900],
                 ),
-                _buildRatingStars(recipe.rating),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    _buildRatingStars(recipe.rating),
+                    const SizedBox(height: 4),
+                    Text(
+                      recipe.prepDuration,
+                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
               ],
             ),
             const SizedBox(height: 20),
@@ -57,7 +67,7 @@ class RecipeDetailScreen extends StatelessWidget {
             const SizedBox(height: 8),
             ...recipe.ingredients.map((item) => Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: Text("• $item", style: const TextStyle(fontSize: 22)),
+                  child: Text("• \$item", style: const TextStyle(fontSize: 22)),
                 )),
             const SizedBox(height: 20),
             const Text(
@@ -78,7 +88,7 @@ class RecipeDetailScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "${entry.key + 1}. ",
+                        "\${entry.key + 1}. ",
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
