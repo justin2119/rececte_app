@@ -924,6 +924,6 @@ const List<Recipe> dataRecipes = [
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQStVP8n7PUZdVLQ8yK-BcI9IkVNEyC5hO7tfBE33YNaA&s=10',
     prepDuration: '1 h 15 min',
     rating: 4.6,
-    description: 'La sauce aux feuilles de manioc, riche en fer et en vitamines. Son goût puissant et sa texture dense en font un pilier de la cuisine familiale et communautaire.',
+    description:'La sauce aux feuilles de manioc, riche en fer et en vitamines. Son goût puissant et sa texture dense en font un pilier de la cuisine familiale et communautaire.',
   )
 ];

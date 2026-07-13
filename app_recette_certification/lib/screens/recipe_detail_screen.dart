@@ -67,12 +67,15 @@ class RecipeDetailScreen extends StatelessWidget {
             const SizedBox(height: 8),
             ...recipe.ingredients.map((item) => Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4),
-                  child:Row(
-                    spacing: 5,
-                    children: [
-                      const Icon(Icons.brightness_1_rounded),
-                      Text(item, style: const TextStyle(fontSize: 22)),
-                    ],
+                  child:SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      spacing: 5,
+                      children: [
+                        const Icon(Icons.brightness_1_rounded),
+                        Text(item, style: const TextStyle(fontSize: 22)),
+                      ],
+                    ),
                   )
                 )),
             const SizedBox(height: 20),

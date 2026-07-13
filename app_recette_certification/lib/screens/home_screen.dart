@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -6,7 +5,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import '../main.dart';
 import '../providers/recipe_provider.dart';
 import '../widgets/filtter_button.dart';
-
+import '../widgets/mobile.dart';
+import '../widgets/tablette.dart';
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
@@ -112,94 +112,17 @@ class HomeScreen extends ConsumerWidget {
             const SizedBox(height: 4),
             Expanded(
               child: LayoutBuilder(
-                builder: (context, constraints) {
-                  int crossAxisCount = 1;
-                  if (constraints.maxWidth > 900) {
-                    crossAxisCount = 3;
-                  } else if (constraints.maxWidth > 600) {
-                    crossAxisCount = 2;
+                  builder:(context, constraints){
+                    if(constraints.maxWidth <= 600){
+                      return Mobile(recette: recette,);
+                    }
+                    else if(constraints.maxWidth>600 && constraints.maxWidth<=900){
+                      return Tablette(recette:recette,);
+                    }
+                    else{
+                      return const Text("Cette Application n'est pas encores disponible sur votre appareil");
+                    }
                   }
-                  return GridView.builder(
-                    itemCount: recette.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: crossAxisCount,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                      childAspectRatio: crossAxisCount == 1 ? 3 : 1,
-                    ),
-                    itemBuilder: (context, index) => Card(
-                      elevation: 1,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child:Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.green[900],
-                        ),
-                        child: InkWell(
-                          onTap: () {
-                            context.push('/detail', extra: recette[index]);
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                            child: IntrinsicHeight(
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: SizedBox(
-                                      width: MediaQuery.of(context).size.width * 0.30,
-                                      child: CachedNetworkImage(
-                                        imageUrl: recette[index].imageUrl,
-                                        fit: BoxFit.cover,
-                                        placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
-                                        errorWidget: (context, url, error) => const Icon(Icons.error),
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(width: 12),
-                                  Expanded(
-                                    child: SingleChildScrollView(
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            recette[index].title,
-                                            style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 25),
-                                          ),
-                                          Text(
-                                            recette[index].category,
-                                            style: const TextStyle(color: Colors.grey, fontSize: 15),
-                                          ),
-                                          const SizedBox(height: 4),
-                                          Text(
-                                            '⏱ ' + recette[index].prepDuration,
-                                            style: const TextStyle(color: Colors.white70, fontSize: 14),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-
-                                  // Trailing : bouton
-                                  IconButton(
-                                    onPressed: () {
-                                      context.push('/detail', extra: recette[index]);
-                                    },
-                                    icon: const Icon(Icons.arrow_forward_ios_rounded, size: 16),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
-                },
               ),
             )
           ],
