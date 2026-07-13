@@ -146,7 +146,7 @@ class HomeScreen extends ConsumerWidget {
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(10),
                                     child: SizedBox(
-                                      width: 100,
+                                      width: MediaQuery.of(context).size.width * 0.30,
                                       child: Image(
                                         image: NetworkImage(recette[index].imageUrl),
                                         fit: BoxFit.cover,
