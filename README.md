@@ -2,10 +2,10 @@
 
 Bienvenue dans l'application **Recette App**, votre guide culinaire ultime dédié à la richesse et à l'authenticité de la cuisine togolaise.
 
-## 🌟 Aperçu détaillé
+##  Aperçu détaillé
 **Recette App** est une application mobile moderne conçue pour préserver et promouvoir le patrimoine culinaire du Togo. Elle propose une collection soigneusement sélectionnée de **45 recettes authentiques**, allant des plats emblématiques aux délices locaux moins connus. Que vous soyez un amateur de cuisine ou un chef chevronné, cette application vous accompagne pas à pas dans la réalisation de saveurs togolaises véritables.
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 L'application offre une expérience utilisateur fluide et intuitive grâce à des fonctionnalités avancées :
 - **Recherche & Filtrage Dynamique** : Trouvez rapidement vos plats préférés grâce à un système de recherche et de filtrage performant propulsé par **Riverpod**.
 - **Système de Notation** : Donnez votre avis et évaluez chaque recette pour partager votre expérience.
