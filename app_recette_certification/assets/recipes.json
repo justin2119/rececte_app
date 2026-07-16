@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "Gboma Dessi",
+    "ingredients": [
+      "500g de feuilles de Gboma (épinards amers)",
+      "500g de viande de bœuf (paleron ou jarret)",
+      "4 crabes frais nettoyés",
+      "50g de crevettes séchées et pilées",
+      "100ml d'huile de palme rouge",
+      "3 tomates fraîches mixées",
+      "2 oignons moyens émincés",
+      "20g de gingembre frais râpé",
+      "3 gousses d'ail pressées",
+      "Sel et piment au goût"
+    ],
+    "instructions": "1. Nettoyer soigneusement les feuilles de Gboma, les découper finement et les faire blanchir 5 minutes dans l'eau bouillante avec une pincée de sel, puis égoutter. 2. Dans une marmite, faire revenir la viande avec la moitié des oignons, le gingembre et l'ail jusqu'à coloration. 3. Ajouter les tomates mixées et l'huile de palme, puis laisser mijoter 15 minutes à feu moyen. 4. Incorporer les crabes, les crevettes séchées pilées et les feuilles de Gboma. 5. Laisser cuire à feu doux pendant 20 minutes jusqu'à ce que la sauce soit onctueuse et que l'huile remonte légèrement à la surface. Rectifier l'assaisonnement.",
+    "category": "Dîner",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMGhzOxjbAtn0SzDiPXAU883X8gT7xX1zvNnr0F_DHLQ&s=10",
+    "prepDuration": "90 min",
+    "rating": 3.4,
+    "description": "Une sauce emblématique du sud du Togo, riche et onctueuse, alliant la saveur terreuse des feuilles amères aux délices de la mer (crabes et crevettes) et à la tendreté du bœuf."
+  },
+  {
+    "id": "2",
+    "title": "Adémè Dessi",
+    "ingredients": [
+      "4 tasses de feuilles d'Adémè hachées",
+      "2 poissons fumés (maquereau ou tilapia)",
+      "500g de viande de bœuf précuite",
+      "150g de crabes ou crevettes fraîches",
+      "50ml d'huile de palme",
+      "1/2 c.à.c de potasse (ou bicarbonate)",
+      "1 oignon émincé",
+      "2 piments scotch bonnet entiers",
+      "Sel et poivre"
+    ],
+    "instructions": "1. Porter 1 litre d'eau à ébullition dans une casserole avec la potasse. 2. Ajouter les feuilles d'Adémè hachées et fouetter vigoureusement avec un fouet traditionnel ou une fourchette pour libérer la texture gluante. 3. Ajouter la viande précuite, le poisson fumé nettoyé, les crustacés et l'oignon. 4. Verser l'huile de palme et ajouter les piments entiers (sans les percer pour éviter un piquant excessif). 5. Laisser mijoter 15 minutes à feu doux jusqu'à ce que les saveurs fusionnent. La consistance doit être fluide mais bien gluante.",
+    "category": "Dîner",
+    "imageUrl": "https://i0.wp.com/www.savourous.com/wp-content/uploads/2020/10/ademe-dessi3.jpg",
+    "prepDuration": "60 min",
+    "rating": 4.4,
+    "description": "Véritable trésor nutritionnel, cette sauce gluante aux feuilles de jute est un incontournable de la gastronomie togolaise, appréciée pour son parfum de poisson fumé et sa texture unique."
+  },
+  {
+    "id": "3",
+    "title": "Ayimolou",
+    "ingredients": [
+      "500g de riz long grain",
+      "250g de haricots noirs ou rouges",
+      "1/4 c.à.c de potasse (pour la couleur sombre)",
+      "Sel au goût",
+      "1.5 litre d'eau"
+    ],
+    "instructions": "1. Faire tremper les haricots pendant 2 heures, puis les rincer. 2. Cuire les haricots dans l'eau avec la potasse jusqu'à ce qu'ils soient tendres et que l'eau devienne très sombre. 3. Laver le riz à plusieurs reprises et l'ajouter aux haricots. 4. Saler et mélanger délicatement. 5. Cuire à couvert et à feu très doux jusqu'à absorption complète de l'eau. Les grains de riz doivent être bien colorés et se détacher facilement. Servir traditionnellement avec du piment noir (Wagashi) et de l'huile.",
+    "category": "Déjeuner",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUocOnh8wRfxqDIUUfT026Cjed_eQv_1qa3d4RnHrqMg&s=10",
+    "prepDuration": "60 min",
+    "rating": 3.5,
+    "description": "Le riz aux haricots typique du Togo, reconnaissable à sa couleur foncée caractéristique. Un plat complet, riche en protéines végétales, souvent vendu dans les rues de Lomé dès l'aube."
+  }
+]
