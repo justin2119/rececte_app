@@ -13,25 +13,25 @@ class AddRecipeScreen extends ConsumerStatefulWidget {
 }
 
 class _AddRecipeScreenState extends ConsumerState<AddRecipeScreen> {
-  final _formKey = GlobalKey<FormState>();
-  final _titleController = TextEditingController();
-  final _descriptionController = TextEditingController();
-  final _prepDurationController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _prepDurationController = TextEditingController();
   String _selectedCategory = 'Petit-déjeuner';
   final List<TextEditingController> _ingredientControllers = [TextEditingController()];
   final List<TextEditingController> _instructionControllers = [TextEditingController()];
 
-  final List<String> _categories = ['Petit-déjeuner', 'Déjeuner', 'Dîner', 'Collation'];
+  final List<String> _categories = ['Petit-déjeuner', 'Déjeuner', 'Dîner', 'Collation', 'Sauces Togolaises'];
 
   @override
   void dispose() {
     _titleController.dispose();
     _descriptionController.dispose();
     _prepDurationController.dispose();
-    for (var controller in _ingredientControllers) {
+    for (TextEditingController controller in _ingredientControllers) {
       controller.dispose();
     }
-    for (var controller in _instructionControllers) {
+    for (TextEditingController controller in _instructionControllers) {
       controller.dispose();
     }
     super.dispose();
@@ -69,16 +69,24 @@ class _AddRecipeScreenState extends ConsumerState<AddRecipeScreen> {
 
   void _submit() {
     if (_formKey.currentState!.validate()) {
-      final ingredients = _ingredientControllers
-          .map((c) => c.text.trim())
-          .where((t) => t.isNotEmpty)
+      if (_ingredientControllers.any((c) => c.text.trim().isEmpty)) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Veuillez remplir tous les ingrédients ou en supprimer')),
+        );
+        return;
+      }
+
+      final List<String> ingredients = _ingredientControllers
+          .map((TextEditingController c) => c.text.trim())
+          .where((String t) => t.isNotEmpty)
           .toList();
-      final instructions = _instructionControllers
-          .map((c) => c.text.trim())
-          .where((t) => t.isNotEmpty)
+      
+      final String instructions = _instructionControllers
+          .map((TextEditingController c) => c.text.trim())
+          .where((String t) => t.isNotEmpty)
           .join('\n');
 
-      final newRecipe = Recipe(
+      final Recipe newRecipe = Recipe(
         id: const Uuid().v4(),
         title: _titleController.text.trim(),
         description: _descriptionController.text.trim(),
@@ -111,31 +119,43 @@ class _AddRecipeScreenState extends ConsumerState<AddRecipeScreen> {
               TextFormField(
                 controller: _titleController,
                 decoration: const InputDecoration(labelText: 'Titre', border: OutlineInputBorder()),
-                validator: (value) => value == null || value.isEmpty ? 'Entrez un titre' : null,
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) return 'Entrez un titre';
+                  if (value.length < 3) return 'Le titre est trop court';
+                  return null;
+                },
               ),
               const SizedBox(height: 16),
               DropdownButtonFormField<String>(
                 value: _selectedCategory,
                 decoration: const InputDecoration(labelText: 'Catégorie', border: OutlineInputBorder()),
-                items: _categories.map((cat) => DropdownMenuItem(value: cat, child: Text(cat))).toList(),
-                onChanged: (val) => setState(() => _selectedCategory = val!),
+                items: _categories.map((String cat) => DropdownMenuItem(value: cat, child: Text(cat))).toList(),
+                onChanged: (String? val) => setState(() => _selectedCategory = val!),
               ),
               const SizedBox(height: 16),
               TextFormField(
                 controller: _descriptionController,
                 decoration: const InputDecoration(labelText: 'Description', border: OutlineInputBorder()),
                 maxLines: 3,
-                validator: (value) => value == null || value.isEmpty ? 'Entrez une description' : null,
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) return 'Entrez une description';
+                  if (value.length < 10) return 'La description doit faire au moins 10 caractères';
+                  return null;
+                },
               ),
               const SizedBox(height: 16),
               TextFormField(
                 controller: _prepDurationController,
                 decoration: const InputDecoration(labelText: 'Durée de préparation (ex: 45 min)', border: OutlineInputBorder()),
-                validator: (value) => value == null || value.isEmpty ? 'Entrez une durée' : null,
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) return 'Entrez une durée';
+                  if (!RegExp(r'\d+').hasMatch(value)) return 'La durée doit contenir un chiffre';
+                  return null;
+                },
               ),
               const SizedBox(height: 24),
               const Text('Ingrédients', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              ..._ingredientControllers.asMap().entries.map((entry) {
+              ..._ingredientControllers.asMap().entries.map((MapEntry<int, TextEditingController> entry) {
                 return Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: Row(
@@ -143,8 +163,8 @@ class _AddRecipeScreenState extends ConsumerState<AddRecipeScreen> {
                       Expanded(
                         child: TextFormField(
                           controller: entry.value,
-                          decoration: InputDecoration(labelText: 'Ingrédient \${entry.key + 1}'),
-                          validator: (value) => value == null || value.isEmpty ? 'Champ requis' : null,
+                          decoration: InputDecoration(labelText: 'Ingrédient ${entry.key + 1}'),
+                          validator: (String? value) => value == null || value.isEmpty ? 'Champ requis' : null,
                         ),
                       ),
                       IconButton(
@@ -162,7 +182,7 @@ class _AddRecipeScreenState extends ConsumerState<AddRecipeScreen> {
               ),
               const SizedBox(height: 24),
               const Text('Instructions', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              ..._instructionControllers.asMap().entries.map((entry) {
+              ..._instructionControllers.asMap().entries.map((MapEntry<int, TextEditingController> entry) {
                 return Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: Row(
@@ -170,8 +190,8 @@ class _AddRecipeScreenState extends ConsumerState<AddRecipeScreen> {
                       Expanded(
                         child: TextFormField(
                           controller: entry.value,
-                          decoration: InputDecoration(labelText: 'Étape \${entry.key + 1}'),
-                          validator: (value) => value == null || value.isEmpty ? 'Champ requis' : null,
+                          decoration: InputDecoration(labelText: 'Étape ${entry.key + 1}'),
+                          validator: (String? value) => value == null || value.isEmpty ? 'Champ requis' : null,
                         ),
                       ),
                       IconButton(
