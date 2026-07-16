@@ -1,36 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import '../main.dart';
 import '../providers/recipe_provider.dart';
+import '../providers/theme_provider.dart';
 import '../widgets/filtter_button.dart';
 import '../widgets/mobile.dart';
 import '../widgets/tablette.dart';
+
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final recette = ref.watch(recetteProvider);
+    final themeMode = ref.watch(themeProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Tous les Recettes (${recette.length})", style: const TextStyle(fontSize: 30)),
         actions: [
-          ValueListenableBuilder<ThemeMode>(
-            builder: (context, mode, child) {
-              return IconButton(
-                icon: Icon(mode == ThemeMode.light
-                    ? Icons.dark_mode
-                    : Icons.light_mode),
-                onPressed: () {
-                  themeNotifier.value = mode == ThemeMode.light
-                      ? ThemeMode.dark
-                      : ThemeMode.light;
-                },
-                tooltip: 'Toggle Theme',
-              );
-            }, valueListenable: themeNotifier,
+          IconButton(
+            icon: Icon(themeMode == ThemeMode.light
+                ? Icons.dark_mode
+                : Icons.light_mode),
+            onPressed: () {
+              ref.read(themeProvider.notifier).toggleTheme();
+            },
+            tooltip: 'Toggle Theme',
           ),
           IconButton(
             onPressed: () {
@@ -115,12 +111,8 @@ class HomeScreen extends ConsumerWidget {
                   builder:(context, constraints){
                     if(constraints.maxWidth <= 600){
                       return Mobile(recette: recette,);
-                    }
-                    else if(constraints.maxWidth>600 && constraints.maxWidth<=900){
-                      return Tablette(recette:recette,);
-                    }
-                    else{
-                      return const Text("Cette Application n'est pas encores disponible sur votre appareil");
+                    } else {
+                      return Tablette(recette: recette);
                     }
                   }
               ),
