@@ -12,27 +12,25 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final recette = ref.watch(recetteProvider);
+    final recetteAsync = ref.watch(recetteProvider);
     final themeMode = ref.watch(themeProvider);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Tous les Recettes (${recette.length})", style: const TextStyle(fontSize: 30)),
+        title: recetteAsync.when(
+          data: (recette) => Text("Tous les Recettes (${recette.length})", style: const TextStyle(fontSize: 30)),
+          loading: () => const Text("Chargement...", style: TextStyle(fontSize: 30)),
+          error: (_, __) => const Text("Recettes", style: TextStyle(fontSize: 30)),
+        ),
         actions: [
           IconButton(
-            icon: Icon(themeMode == ThemeMode.light
-                ? Icons.dark_mode
-                : Icons.light_mode),
-            onPressed: () {
-              ref.read(themeProvider.notifier).toggleTheme();
-            },
-            tooltip: 'Toggle Theme',
+            icon: const Icon(Icons.settings),
+            onPressed: () => context.push('/settings'),
+            tooltip: 'Settings',
           ),
           IconButton(
-            onPressed: () {
-              context.push('/about');
-            },
-            icon: const Icon(Icons.error_outline_outlined),
+            onPressed: () => context.push('/about'),
+            icon: const Icon(Icons.info_outline),
           )
         ],
       ),
@@ -67,63 +65,52 @@ class HomeScreen extends ConsumerWidget {
                 children: [
                   FilterButton(
                     title: 'Tous',
-                    onPressed: () {
-                      ref.read(categorieProvider.notifier).state = "Tous";
-                    },
+                    onPressed: () => ref.read(categorieProvider.notifier).state = "Tous",
                   ),
                   FilterButton(
                     title: 'Petit-déjeuner',
-                    onPressed: () {
-                      ref.read(categorieProvider.notifier).state =
-                          "Petit-déjeuner";
-                    },
+                    onPressed: () => ref.read(categorieProvider.notifier).state = "Petit-déjeuner",
                   ),
                   FilterButton(
                     title: 'Déjeuner',
-                    onPressed: () {
-                      ref.read(categorieProvider.notifier).state = "Déjeuner";
-                    },
+                    onPressed: () => ref.read(categorieProvider.notifier).state = "Déjeuner",
                   ),
                   FilterButton(
                     title: 'Dîner',
-                    onPressed: () {
-                      ref.read(categorieProvider.notifier).state = "Dîner";
-                    },
+                    onPressed: () => ref.read(categorieProvider.notifier).state = "Dîner",
                   ),
                   FilterButton(
                     title: 'Collation',
-                    onPressed: () {
-                      ref.read(categorieProvider.notifier).state = "Collation";
-                    },
+                    onPressed: () => ref.read(categorieProvider.notifier).state = "Collation",
                   ),
                   FilterButton(
                     title: 'Sauces Togolaises',
-                    onPressed: () {
-                      ref.read(categorieProvider.notifier).state = "Sauces Togolaises";
-                    },
+                    onPressed: () => ref.read(categorieProvider.notifier).state = "Sauces Togolaises",
                   ),
                 ],
               ),
             ),
             const SizedBox(height: 4),
             Expanded(
-              child: LayoutBuilder(
-                  builder:(context, constraints){
-                    if(constraints.maxWidth <= 600){
-                      return Mobile(recette: recette,);
+              child: recetteAsync.when(
+                data: (recette) => LayoutBuilder(
+                  builder: (context, constraints) {
+                    if (constraints.maxWidth <= 600) {
+                      return Mobile(recette: recette);
                     } else {
                       return Tablette(recette: recette);
                     }
-                  }
+                  },
+                ),
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (err, stack) => Center(child: Text('Erreur: $err')),
               ),
             )
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          context.push('/add-recipe');
-        },
+        onPressed: () => context.push('/add-recipe'),
         child: const Icon(Icons.add),
       ),
     );
