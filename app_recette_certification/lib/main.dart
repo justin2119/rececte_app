@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:recipe_certification_project/utils/route.dart';
+import 'package:recipe_certification_project/router/app_router.dart';
 import 'package:recipe_certification_project/providers/theme_provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     const ProviderScope(
       child: RecipeApp(),
