@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import '../models/recipe.dart';
 import '../repositories/i_recipe_repository.dart';
 import '../repositories/recipe_repository_impl.dart';
