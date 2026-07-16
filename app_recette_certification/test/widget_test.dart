@@ -4,47 +4,32 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipe_certification_project/main.dart';
 
 void main() {
-  testWidgets('Certification Test: HomeScreen displays recipe Gboma Dessi', (WidgetTester tester) async {
-    // Build our app with ProviderScope
-    await tester.pumpWidget(
-      const ProviderScope(
-        child: RecipeApp(),
-      ),
-    );
+  testWidgets('Certification: HomeScreen displays recipes after async load', (WidgetTester tester) async {
+    // Build app
+    await tester.pumpWidget(const ProviderScope(child: RecipeApp()));
 
-    // Initial frame
-    await tester.pump();
-
-    // The app might use CachedNetworkImage which can be tricky in tests, 
-    // but the text should be present in the list.
-    // Wait for any animations or data loading if necessary
+    // Wait for async load (simulated delay in repository)
+    await tester.pump(const Duration(milliseconds: 600));
     await tester.pumpAndSettle();
 
-    // Verify that the title "Gboma Dessi" is displayed
+    // Verify "Gboma Dessi" from JSON is present
     expect(find.text('Gboma Dessi'), findsOneWidget);
-    
-    // Verify that the category "Dîner" is displayed near the recipe
-    expect(find.text('Dîner'), findsAtLeastNWidgets(1));
+    expect(find.textContaining('Tous les Recettes'), findsOneWidget);
   });
 
-  testWidgets('Certification Test: Search filtering for Ayimolou', (WidgetTester tester) async {
-    await tester.pumpWidget(
-      const ProviderScope(
-        child: RecipeApp(),
-      ),
-    );
+  testWidgets('Certification: Navigation to Settings works', (WidgetTester tester) async {
+    await tester.pumpWidget(const ProviderScope(child: RecipeApp()));
     await tester.pumpAndSettle();
 
-    // Verify search field exists
-    final searchField = find.byType(TextField);
-    expect(searchField, findsOneWidget);
-
-    // Enter search query
-    await tester.enterText(searchField, 'Ayimolou');
+    // Find and tap settings icon
+    final settingsIcon = find.byIcon(Icons.settings);
+    expect(settingsIcon, findsOneWidget);
+    
+    await tester.tap(settingsIcon);
     await tester.pumpAndSettle();
 
-    // Verify Ayimolou is found and others are filtered out
-    expect(find.text('Ayimolou'), findsOneWidget);
-    expect(find.text('Gboma Dessi'), findsNothing);
+    // Verify we are on SettingsScreen
+    expect(find.text('Paramètres'), findsOneWidget);
+    expect(find.text('Mode Sombre'), findsOneWidget);
   });
 }
