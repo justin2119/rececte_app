@@ -1,9 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/recipe.dart';
-import '../repositories/recipe_repository.dart';
+import '../repositories/i_recipe_repository.dart';
+import '../repositories/recipe_repository_impl.dart';
 
-final recipeRepositoryProvider = Provider<RecipeRepository>((ref) {
-  return JsonRecipeRepository();
+final recipeRepositoryProvider = Provider<IRecipeRepository>((ref) {
+  return RecipeRepositoryImpl();
 });
 
 final categorieProvider = StateProvider<String?>((ref) => null);
@@ -16,11 +17,8 @@ class RecipeNotifier extends AsyncNotifier<List<Recipe>> {
   }
 
   Future<void> addRecipe(Recipe recipe) async {
-    state = const AsyncValue.loading();
-    state = await AsyncValue.guard(() async {
-      final currentRecipes = await future;
-      return [...currentRecipes, recipe];
-    });
+    final previousState = await future;
+    state = AsyncValue.data([...previousState, recipe]);
   }
 }
 
