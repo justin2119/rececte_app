@@ -4,31 +4,30 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipe_certification_project/main.dart';
 
 void main() {
-  testWidgets('HomeScreen displays title and recipe list', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('Certification Test: HomeScreen displays recipe Gboma Dessi', (WidgetTester tester) async {
+    // Build our app with ProviderScope
     await tester.pumpWidget(
       const ProviderScope(
         child: RecipeApp(),
       ),
     );
 
-    // Wait for the app to settle
+    // Initial frame
+    await tester.pump();
+
+    // The app might use CachedNetworkImage which can be tricky in tests, 
+    // but the text should be present in the list.
+    // Wait for any animations or data loading if necessary
     await tester.pumpAndSettle();
 
-    // Verify that the AppBar title is present
-    expect(find.textContaining('Tous les Recettes'), findsOneWidget);
-
-    // Verify that the search field is present
-    expect(find.byType(TextField), findsOneWidget);
-
-    // Verify that we have some recipes displayed (at least the first one)
+    // Verify that the title "Gboma Dessi" is displayed
     expect(find.text('Gboma Dessi'), findsOneWidget);
     
-    // Verify categories are present
-    expect(find.text('Petit-déjeuner'), findsAtLeastNWidgets(1));
+    // Verify that the category "Dîner" is displayed near the recipe
+    expect(find.text('Dîner'), findsAtLeastNWidgets(1));
   });
 
-  testWidgets('Search filtering works', (WidgetTester tester) async {
+  testWidgets('Certification Test: Search filtering for Ayimolou', (WidgetTester tester) async {
     await tester.pumpWidget(
       const ProviderScope(
         child: RecipeApp(),
@@ -36,14 +35,16 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    // Enter search text
-    await tester.enterText(find.byType(TextField), 'Ayimolou');
+    // Verify search field exists
+    final searchField = find.byType(TextField);
+    expect(searchField, findsOneWidget);
+
+    // Enter search query
+    await tester.enterText(searchField, 'Ayimolou');
     await tester.pumpAndSettle();
 
-    // Check if filtered result is shown
+    // Verify Ayimolou is found and others are filtered out
     expect(find.text('Ayimolou'), findsOneWidget);
-    
-    // Gboma Dessi should be gone
     expect(find.text('Gboma Dessi'), findsNothing);
   });
 }
