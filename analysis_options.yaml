@@ -1,0 +1,22 @@
+include: package:flutter_lints/rules.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+
+linter:
+  rules:
+    - always_declare_return_types
+    - always_specify_types
+    - avoid_print
+    - avoid_unnecessary_containers
+    - avoid_web_libraries_in_flutter
+    - camel_case_types
+    - curly_braces_in_flow_control_structures
+    - prefer_const_constructors
+    - prefer_const_declarations
+    - prefer_final_fields
+    - prefer_single_quotes
+    - sort_child_properties_last
+    - use_key_in_widget_constructors
